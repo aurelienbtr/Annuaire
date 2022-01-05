@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/css/proj.css" th:href="@{/css/proj.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="divTable">
+    <fieldset>
+        <form th:action="@{'/updatePerson?id=' + ${person.getId()}}" th:object="${person}" method="POST">
+            <label for="name">Nom :
+                <input type="text" id="name" name="name" size="30" th:value="${person.getName()}"/>
+            </label><br>
+            <label for="surname">Prénom :
+                <input type="text" id="surname" name="surname" size="30" th:value="${person.getSurname()}"/>
+            </label><br>
+            <label for="phone">Téléphone :
+                <input type="text" id="phone" name="phone" size="30" th:value="${person.getPhone()}"/>
+            </label><br>
+            <label for="city">Ville :
+                <input type="text" id="city" name="city" size="30" th:value="${person.getCity()}"/>
+            </label><br>
+            <input type="submit" value="Modifier"/>
+        </form>
+    </fieldset>
+</div>
+</body>
+</html>

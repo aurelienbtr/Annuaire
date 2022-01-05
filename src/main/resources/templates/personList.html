@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/proj.css" th:href="@{/css/proj.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="divTable">
+
+    <form action="/annuaire" method="GET">
+        <input type="submit" value="Afficher toutes les personnes"/>
+    </form>
+
+    <a href="/annuaire/addPerson">
+        <input type="button" value="Ajouter une personne">
+    </a>
+
+    <fieldset>
+        <form action="/annuaire/person" method="GET">
+            <label for="name">Nom :
+                <input type="text" id="name" name="name" size="30"/>
+            </label>
+            <input type="submit" value="Rechercher"/>
+        </form>
+    </fieldset>
+</div>
+
+<div>
+    <table class="divTable">
+        <thead class="headRow">
+        <tr>
+            <th class="headCell">Id</th>
+            <th class="headCell">Nom</th>
+            <th class="headCell">Prénom</th>
+            <th class="headCell">Téléphone</th>
+            <th class="headCell">Ville</th>
+            <th class="headCell">Modifier</th>
+            <th class="headCell">Supprimer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="entry : ${personMap}" class="divRow">
+            <td class="divCell" th:text="${entry.getValue.getId()}"></td>
+            <td class="divCell" th:text="${entry.getValue.getName()}"></td>
+            <td class="divCell" th:text="${entry.getValue.getSurname()}"></td>
+            <td class="divCell" th:text="${entry.getValue.getPhone()}"></td>
+            <td class="divCell" th:text="${entry.getValue.getCity()}"></td>
+
+            <td class="divCell">
+                <a th:href="@{'/updatePerson?id=' + ${entry.getValue().getId()}}">
+                    <input type="button" value="Modifier">
+                </a>
+            </td>
+
+            <form th:action="@{'/annuaire/remove?id=' + ${entry.getValue().getId()}}"
+                  method="POST">
+            <td class="divCell">
+                <button type="submit" th:text="Supprimer"></button>
+            </td>
+            </form>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

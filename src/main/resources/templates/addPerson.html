@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/css/proj.css" th:href="@{/css/proj.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="divTable">
+    <fieldset>
+        <form action="/addPerson" method="post">
+            <label for="name">Nom :
+                <input type="text" id="name" name="name" size="30"/>
+            </label><br>
+            <label for="surname">Prénom :
+                <input type="text" id="surname" name="surname" size="30"/>
+            </label><br>
+            <label for="phone">Téléphone :
+                <input type="text" id="phone" name="phone" size="30"/>
+            </label><br>
+            <label for="city">Ville :
+                <input type="text" id="city" name="city" size="30"/>
+            </label><br>
+
+            <input type="submit" value="Ajouter"/>
+        </form>
+    </fieldset>
+</div>
+</body>
+</html>
