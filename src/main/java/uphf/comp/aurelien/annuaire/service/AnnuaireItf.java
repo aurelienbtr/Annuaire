@@ -30,6 +30,7 @@ public interface AnnuaireItf {
 	 * C'EST LE SERVICE REST
 	 *
 	 */
+    
 	ResponseEntity<?> getPersonsREST();
 	
 	ResponseEntity<?> createPersonREST(CreatePerson createPerson);

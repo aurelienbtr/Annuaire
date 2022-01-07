@@ -31,7 +31,7 @@ public class PersonController {
 	}
 
 	/**
-	 * Récupère toutes les personnes contenues dans la BDD
+	 * Récupère toutes les personnes de la BDD
 	 *
 	 */
 	@GetMapping("annuaire")
