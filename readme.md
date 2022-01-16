@@ -24,7 +24,9 @@ Pour récupérer le projet :
 
 
 On peut lister, rechercher, ajouter, modifier des entrées d'un annuaire.
+
 Nous avons des services REST.
+
 L'application est deployable par une image Docker
 
 
