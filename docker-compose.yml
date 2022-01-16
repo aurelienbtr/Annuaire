@@ -1,0 +1,35 @@
+version: "3.1"
+services:
+  monappspring :
+   image: tp-docker
+   depends_on: 
+    - hsqldb 
+   ports:
+    - "8080:8080" #port de mon appli spring
+   networks:
+    - monreseau
+   environment:
+    SPRING_DATASOURCE_URL: jdbc:hsqldb:hsql:/hsqldb/test
+    SPRING_DATASOURCE_USERNAME: sa
+    SPRING_DATASOURCE_PASSWORD:
+
+  hsqldb:
+   image: blacklabelops/hsqldb #image provenant de docker hub en version 2.3.3
+   ports:
+    - "9001:9001"
+   volumes:
+    - /opt/database
+   networks:
+    - monreseau 
+   environment:
+    - HSQLDB_TRACE=true
+    - HSQLDB_DATABASE_NAME=hsqldb
+    - HSQLDB_SILENT=false
+    - HSQLDB_REMOTE=true
+    - HSQLDB_USER=sa
+    - HSQLDB_PASSWORD=
+    - HSQLDB_DATABASE_HOST=localhost
+    - HSQLDB_DATABASE_ALIAS=test
+
+networks:
+  monreseau: #permet de mettre en reseau Spring et hsqldb
