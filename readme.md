@@ -15,10 +15,10 @@ Réalisé par Aurélien Bétourné - M2 TNSID
 
 Réalisé sur MAC OS
 
-### Pour récupérer le projet :
+## Pour récupérer le projet :
   git clone https://github.com/aurelienbtr/Annuaire
  
-### Pour lancer le docker :
+## Pour lancer le docker :
  Quand nous sommes dans le dossier :
  docker-compose up --build
 
