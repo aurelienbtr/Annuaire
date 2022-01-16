@@ -15,7 +15,7 @@ Réalisé par Aurélien Bétourné - M2 TNSID
 
 Réalisé sur MAC OS
 
-Pour récupérer le projet :
+#Pour récupérer le projet :
   git clone https://github.com/aurelienbtr/Annuaire
  
  Pour lancer le docker :
@@ -30,5 +30,5 @@ Nous avons des services REST.
 L'application est deployable par une image Docker
 
 
-MON APPLICATION :
+##MON APPLICATION :
 http://localhost:8080/annuaire
